@@ -1,4 +1,6 @@
-## Interior Decorator
+# Interior Decorator
+
+[![Code Climate](https://codeclimate.com/github/vicramon/interior_decorator.png)](https://codeclimate.com/github/vicramon/interior_decorator)
 
 Ultra-lightweight decorator for Rails models. Because decorators should be simple.
 

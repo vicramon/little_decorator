@@ -17,6 +17,10 @@ class InteriorDecorator
     @model = model
   end
 
+  def h
+    ActionController::Base.helpers
+  end
+
   def method_missing(method_name, *args, &block)
     if model.respond_to?(method_name)
       model.public_send(method_name, *args, &block)

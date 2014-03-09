@@ -52,6 +52,20 @@ Call `decorate` on a collection to get an arary of decorated objects. It just ch
 decorated_users = UserDecorator.decorate(users)
 ```
 
+## Vim Projections
+
+For use with Rails.vim. Place in `config/projections.json`.
+
+```json
+{
+  "app/decorators/*_decorator.rb": {
+    "command": "decorator",
+    "alternate": "spec/decorators/%s_decorator_spec.rb",
+    "template": "class %SDecorator < InteriorDecorator\nend"
+  }
+}
+```
+
 ## Contribute
 
 Pull requests are welcome, but let's keep this thing simple.

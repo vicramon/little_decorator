@@ -32,6 +32,8 @@ end
 
 Use `model` to get at the model as in the `updated_at` method above, or if you're not worried about a name collision you can just omit it, as in `full_name`.
 
+Interior Decorator sends any methods it doesn't find to the actual model, so there's not need to specify what to delegate.
+
 ### Decorate Your Objects
 
 Use the `decorate` helper method in your views to get the decorated object:

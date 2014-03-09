@@ -1,0 +1,28 @@
+require 'helpers/interior_decorator_helper'
+ActionView::Base.send :include, InteriorDecoratorHelper
+
+class InteriorDecorator
+
+  attr_reader :model
+
+  def self.decorate(item)
+    if item.respond_to?(:each)
+      item.map { |object| new(object) }
+    else
+      new(item)
+    end
+  end
+
+  def initialize(model)
+    @model = model
+  end
+
+  def method_missing(method_name, *args, &block)
+    if model.respond_to?(method_name)
+      model.public_send(method_name, *args, &block)
+    else
+      super
+    end
+  end
+
+end

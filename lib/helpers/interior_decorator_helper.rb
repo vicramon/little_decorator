@@ -1,15 +1,9 @@
 module InteriorDecoratorHelper
 
-  def decorate(model)
-    decorator_name = "#{model.class}Decorator"
-
-    begin
-      decorator = decorator_name.constantize
-    rescue
-      raise "#{decorator_name} doesn't exist or isn't loaded"
-    end
-
-    decorator.decorate(model)
+  def decorate(item)
+    klass = item.respond_to?(:each) ? item.first.class : item.class
+    decorator = "#{klass}Decorator".constantize
+    decorator.decorate(item)
   end
 
 end

@@ -7,3 +7,5 @@ module InteriorDecoratorHelper
   end
 
 end
+
+ActionView::Base.send :include, InteriorDecoratorHelper

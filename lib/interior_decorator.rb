@@ -1,5 +1,4 @@
 require 'helpers/interior_decorator_helper'
-ActionView::Base.send :include, InteriorDecoratorHelper
 
 class InteriorDecorator
 

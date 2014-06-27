@@ -27,9 +27,5 @@ class InteriorDecorator
       super
     end
   end
-
 end
 
-
-module InteriorDecorators
-end

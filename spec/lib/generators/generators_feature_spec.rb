@@ -31,7 +31,7 @@ describe "In order to easily generate decorator objects" +
     expect(true).to eql true
   end
 
-  describe InteriorDecorators::Generators::DecorateGenerator, type: :generator do
+  describe InteriorDecorator::DecorateGenerator, type: :generator do
     destination TMP_ROOT 
     before { prepare_destination }
   

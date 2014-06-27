@@ -1,7 +1,7 @@
 module InteriorDecoratorHelper
 
   def decorate(item)
-    klass = item.respond_to?(:each) ? item.first.class : item.class
+    klass = Array(item).first.class
     decorator = "#{klass}Decorator".constantize
     decorator.decorate(item)
   end

@@ -1,6 +1,6 @@
 module InteriorDecorators
   module Generators
-    class InteriorDecoratorGenerator < Rails::Generators::Base
+    class DecorateGenerator < Rails::Generators::Base
       argument :model_name, type: :string
       def create_interior_decorator
 

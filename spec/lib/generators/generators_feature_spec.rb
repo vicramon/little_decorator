@@ -4,7 +4,7 @@ class Application < ::Rails::Application; end
 
 require 'pry_debug'
 require 'ammeter/init'
-require 'generators/interior_decorator_generator'
+require 'generators/decorate_generator'
 
 def pry_in
   PryDebug.pry
@@ -31,7 +31,7 @@ describe "In order to easily generate decorator objects" +
     expect(true).to eql true
   end
 
-  describe InteriorDecorators::Generators::InteriorDecoratorGenerator, type: :generator do
+  describe InteriorDecorators::Generators::DecorateGenerator, type: :generator do
     destination TMP_ROOT 
     before { prepare_destination }
   

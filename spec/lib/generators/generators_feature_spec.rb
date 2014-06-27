@@ -4,7 +4,7 @@ class Application < ::Rails::Application; end
 
 require 'pry_debug'
 require 'ammeter/init'
-require 'generators/decorate_generator'
+require 'generators/interior_decorator/decorate_generator'
 
 def pry_in
   PryDebug.pry

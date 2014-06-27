@@ -42,12 +42,35 @@ describe "In order to easily generate decorator objects" +
     end
 
     describe "the generated file" do
-      before { run_generator %w(user) }
-      describe "the file" do
-        subject {file('app/decorators/user_decorator.rb') }
-        it { should exist }
-        it { should contain(/class UserDecorator < InteriorDecorator/) }
-        it { should contain(/end/) }
+      context "single case" do
+        before { run_generator %w(user) }
+        describe "the file" do
+          subject {file('app/decorators/user_decorator.rb') }
+          it { should exist }
+          it { should contain(/class UserDecorator < InteriorDecorator/) }
+          it { should contain(/end/) }
+        end
+      end
+
+      context "camel case" do
+        before { run_generator %w(AdminUser) }
+        describe "the file" do
+          subject {file('app/decorators/admin_user_decorator.rb') }
+          it { should exist }
+          it { should contain(/class AdminUserDecorator < InteriorDecorator/) }
+          it { should contain(/end/) }
+        end
+      end
+
+
+      context "snake case" do
+        before { run_generator %w(admin_user) }
+        describe "the file" do
+          subject {file('app/decorators/admin_user_decorator.rb') }
+          it { should exist }
+          it { should contain(/class AdminUserDecorator < InteriorDecorator/) }
+          it { should contain(/end/) }
+        end
       end
     end
   end

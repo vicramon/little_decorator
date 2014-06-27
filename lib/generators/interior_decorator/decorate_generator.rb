@@ -4,8 +4,6 @@ class InteriorDecorator
     
 
     def create_interior_decorator
-
-      puts("\n\nI tried to create something\n\n\n")
       filename = model_name.underscore + "_decorator.rb"
       template "decorator.erb", File.join('app/decorators',filename)
     end

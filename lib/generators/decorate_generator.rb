@@ -2,6 +2,8 @@ module InteriorDecorators
   module Generators
     class DecorateGenerator < Rails::Generators::Base
       argument :model_name, type: :string
+      
+      
       def create_interior_decorator
 
         puts("\n\nI tried to create something\n\n\n")

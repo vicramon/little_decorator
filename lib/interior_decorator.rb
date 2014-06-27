@@ -29,3 +29,7 @@ class InteriorDecorator
   end
 
 end
+
+
+module InteriorDecorators
+end

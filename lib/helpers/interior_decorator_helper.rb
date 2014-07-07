@@ -5,7 +5,7 @@ module InteriorDecoratorHelper
     decorator = "#{klass}Decorator".constantize
     decorator.decorate(item)
   end
-
+  alias_method :d, :decorate
 end
 
 ActionView::Base.send :include, InteriorDecoratorHelper

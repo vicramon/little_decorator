@@ -1,7 +1,5 @@
 require 'helpers/interior_decorator_helper'
-
 class InteriorDecorator
-
   attr_reader :model
 
   def self.decorate(item)

@@ -5,7 +5,7 @@ class InteriorDecorator
   attr_reader :model
 
   def self.decorate(item)
-    if item.respond_to?(:each)
+    if item.respond_to?(:map)
       item.map { |object| new(object) }
     else
       new(item)

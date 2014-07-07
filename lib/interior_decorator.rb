@@ -16,9 +16,10 @@ class InteriorDecorator
     @model = model
   end
 
-  def h
+  def helper
     ActionController::Base.helpers
   end
+  alias_method :h, :helper
 
   def method_missing(method_name, *args, &block)
     if model.respond_to?(method_name)

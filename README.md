@@ -2,7 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/vicramon/interior_decorator.png)](https://codeclimate.com/github/vicramon/interior_decorator)
 
-Ultra-lightweight decorator for Rails models. There's only 42 actionable lines of code!
+Ultra-lightweight decorator for Rails models. Only 42 actionable lines of code!
 
 ## Installation
 

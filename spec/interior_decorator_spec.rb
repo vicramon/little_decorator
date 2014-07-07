@@ -22,7 +22,7 @@ describe InteriorDecorator do
   end
 
   it 'sends missing methods to the model' do
-    expect(subject.likes_dogs).to be_true
+    expect(subject.likes_dogs).to be true
   end
 
   it 'can explicitly call model methods' do

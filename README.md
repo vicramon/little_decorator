@@ -32,30 +32,42 @@ class UserDecorator < InteriorDecorator
 end
 ```
 
-Method calls are sent to the model via `method_missing`.
+Method calls are sent to the model via `method_missing`, so you can call model methods directly as in the `full_name` method defined above.
 
-You can call model methods directly, as in the `full_name` method defined above.
+If there's going to be a method name collision then call model methods with `model.`.
 
-If there's going to be a method name collision, then call model methods with `model.`.
+You can access helper methods with `helper.`, or `h.` for short.
 
 ### Decorate Your Objects
 
-Use the `decorate` helper method in your views to get the decorated object:
+#### In Controllers
 
-```
-<%= decorate(user).updated_at %>
-```
+Just call decorate:
 
-If you need a decorated object in a controller then do:
-
-```
-decorated_user = UserDecorator.decorate(user)
+```ruby
+UserDecorator.decorate(user)
 ```
 
-Call `decorate` on a collection to get an arary of decorated objects. It just checks to see if the item you pass it is enumerable.
+#### In Views
 
+Just call decorate:
+
+```erb
+<%= decorate(user) %>
 ```
-decorated_users = UserDecorator.decorate(users)
+
+Or `d` for short.
+
+#### On Collections
+
+Just call decorate. You'll get an array of decorated objects.
+
+```ruby
+UserDecorator.decorate(users)
+```
+
+```erb
+<%= decorate(users) %>
 ```
 
 ## Vim Projections

@@ -6,19 +6,13 @@ Gem::Specification.new do |s|
   s.name = "interior_decorator"
   s.version = '0.1'
   s.license = "MIT"
-
   s.authors = ["Vic Ramon"]
   s.email = ["vic@vicramon.com.com"]
   s.description = "Ultra-lightweight decorator for Rails models."
-
   s.require_paths = ["lib"]
   s.summary = "Ultra-lightweight decorator for Rails models."
-
   s.required_ruby_version = '>= 1.9.3'
-
   s.files = Dir.glob("lib/**/*") + %w(README.md)
-
   s.add_development_dependency 'rspec'
-
   s.require_path = 'lib'
 end

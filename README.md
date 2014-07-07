@@ -2,7 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/vicramon/interior_decorator.png)](https://codeclimate.com/github/vicramon/interior_decorator)
 
-Ultra-lightweight decorator for Rails models. Because decorators should be simple.
+Ultra-lightweight decorator for Rails models. There's only 42 actionable lines of code!
 
 ## Installation
 
@@ -21,20 +21,22 @@ Add your decorator in `app/decorators`:
 ```ruby
 class UserDecorator < InteriorDecorator
 
-  def updated_at
-    model.updated_at.strftime("%A, %B %e, %Y")
-  end
-
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def updated_at
+    model.updated_at.strftime("%A, %B %e, %Y")
   end
 
 end
 ```
 
-Use `model` to get at the model as in the `updated_at` method above, or if you're not worried about a name collision you can just omit it, as in `full_name`.
+Method calls are sent to the model via `method_missing`.
 
-Interior Decorator sends any methods it doesn't find to the actual model, so there's not need to specify what to delegate.
+You can call model methods directly, as in the `full_name` method defined above.
+
+If there's going to be a method name collision, then call model methods with `model.`.
 
 ### Decorate Your Objects
 

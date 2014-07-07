@@ -29,4 +29,8 @@ describe InteriorDecorator do
     expect(subject.likes_to_bake).to eq 'cake'
   end
 
+  it 'forwards respond_to? calls to the model when not found' do
+    expect(subject.respond_to?(:first_name)).to be true
+  end
+
 end

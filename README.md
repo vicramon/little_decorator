@@ -19,6 +19,7 @@ gem 'interior_decorator'
 Add your decorator in `app/decorators`:
 
 ```ruby
+# app/decorators/user_decorator.rb
 class UserDecorator < InteriorDecorator
 
   def full_name
@@ -42,28 +43,26 @@ You can access helper methods with `helper.`, or `h.` for short.
 
 #### In Controllers
 
-Just call decorate:
+Call `decorate` on the decorator:
 
 ```ruby
-UserDecorator.decorate(user)
+decorated_user = UserDecorator.decorate(user)
 ```
 
 #### In Views
 
-Just call decorate:
+Call the decorate helper, or `d` for short:
 
 ```erb
 <%= decorate(user) %>
 ```
 
-Or `d` for short.
-
 #### On Collections
 
-Just call decorate. You'll get an array of decorated objects.
+Call decorate the same way. You'll get an array of decorated objects.
 
 ```ruby
-UserDecorator.decorate(users)
+decorated_users = UserDecorator.decorate(users)
 ```
 
 ```erb
@@ -86,4 +85,4 @@ For use with Rails.vim. Place in `config/projections.json`.
 
 ## Contribute
 
-Pull requests are welcome, but let's keep this thing simple.
+Pull requests are welcome, but I want to keep this gem simple.

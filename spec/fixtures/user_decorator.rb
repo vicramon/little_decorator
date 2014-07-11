@@ -1,4 +1,4 @@
-class UserDecorator < InteriorDecorator
+class UserDecorator < LittleDecorator
 
   def full_name
     "#{first_name} #{last_name}"

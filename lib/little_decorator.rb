@@ -1,7 +1,7 @@
-require 'helpers/interior_decorator_helper'
-ActiveSupport.on_load(:action_controller) { include InteriorDecoratorHelper }
+require 'helpers/little_decorator_helper'
+ActiveSupport.on_load(:action_controller) { include LittleDecoratorHelper }
 
-class InteriorDecorator
+class LittleDecorator
 
   attr_reader :record, :view
 

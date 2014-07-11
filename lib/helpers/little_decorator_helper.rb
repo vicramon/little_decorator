@@ -1,4 +1,4 @@
-module InteriorDecoratorHelper
+module LittleDecoratorHelper
   extend ActiveSupport::Concern
   included { helper_method :decorate, :d }
 

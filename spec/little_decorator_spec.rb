@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'fixtures/user'
 require 'fixtures/user_decorator'
 
-describe InteriorDecorator do
+describe LittleDecorator do
 
   let(:record) { User.new }
   subject { UserDecorator.new(record, nil) }

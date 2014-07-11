@@ -2,6 +2,7 @@ require 'helpers/interior_decorator_helper'
 ActiveSupport.on_load(:action_controller) { include InteriorDecoratorHelper }
 
 class InteriorDecorator
+
   attr_reader :record, :view
 
   def self.decorate(record_or_collection, view)
@@ -13,17 +14,15 @@ class InteriorDecorator
   end
 
   def initialize(record, view)
-    @record = record
-    @view = view
+    @record, @view = record, view
   end
   alias_method :model, :record
 
   def method_missing(method_name, *args, &block)
-    if record.respond_to?(method_name)
-      record.public_send(method_name, *args, &block)
-    elsif view.respond_to?(method_name)
-      view.public_send(method_name, *args, &block)
-    else ; super ; end
+    [record, view].each do |item|
+      return item.public_send(method_name, *args, &block) if item.respond_to?(method_name)
+    end
+    super
   end
 
   def respond_to_missing?(method_name, include_private=false)

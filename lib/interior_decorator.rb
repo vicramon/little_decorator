@@ -1,5 +1,4 @@
 require 'helpers/interior_decorator_helper'
-require 'interior_decorator/routes'
 
 ActiveSupport.on_load :action_controller do
   include InteriorDecoratorHelper

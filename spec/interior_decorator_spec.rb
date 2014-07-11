@@ -1,6 +1,4 @@
-class ActionView; module Base; end; end
-
-require 'interior_decorator'
+require 'spec_helper'
 require 'fixtures/user'
 require 'fixtures/user_decorator'
 

@@ -1,6 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/little_decorator.svg)](http://badge.fury.io/rb/little_decorator)
 [![Code Climate](http://img.shields.io/codeclimate/github/kabisaict/flow.svg)](https://codeclimate.com/github/vicramon/little_decorator)
 [![Travis CI](https://travis-ci.org/vicramon/little_decorator.svg?branch=master)](https://travis-ci.org/vicramon/little_decorator)
+[![Goldblum Approved](http://img.shields.io/badge/goldblum-approved-brightgreen.svg)](https://www.youtube.com/watch?v=wJelEXaPhJ8&feature=kp)
 
 ![LittleDecorator: a rails model decorator. A cute husky with sunglasses proclaims his surprise at how small this gem is.](http://i.imgur.com/e0YvqjJ.png)
 

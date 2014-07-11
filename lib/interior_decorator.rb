@@ -36,7 +36,8 @@ class InteriorDecorator
     end
   end
 
-  def respond_to_missing?(method_name, include_private = false)
+  def respond_to_missing?(method_name, include_private=false)
     model.respond_to?(method_name, include_private)
   end
+
 end

@@ -1,11 +1,7 @@
 require 'helpers/interior_decorator_helper'
-
-ActiveSupport.on_load :action_controller do
-  include InteriorDecoratorHelper
-end
+ActiveSupport.on_load(:action_controller) { include InteriorDecoratorHelper }
 
 class InteriorDecorator
-
   attr_reader :record, :view
 
   def self.decorate(record_or_collection, view)
@@ -27,13 +23,10 @@ class InteriorDecorator
       record.public_send(method_name, *args, &block)
     elsif view.respond_to?(method_name)
       view.public_send(method_name, *args, &block)
-    else
-      super
-    end
+    else ; super ; end
   end
 
   def respond_to_missing?(method_name, include_private=false)
     [record, view].any? { |item| item.respond_to?(method_name, include_private) }
   end
-
 end

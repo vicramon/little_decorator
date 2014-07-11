@@ -1,3 +1,4 @@
+require 'active_support/concern'
 module LittleDecoratorHelper
   extend ActiveSupport::Concern
   included { helper_method :decorate, :d }

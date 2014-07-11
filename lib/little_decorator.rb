@@ -2,7 +2,6 @@ require 'helpers/little_decorator_helper'
 ActiveSupport.on_load(:action_controller) { include LittleDecoratorHelper }
 
 class LittleDecorator
-
   attr_reader :record, :view
 
   def self.decorate(record_or_collection, view)

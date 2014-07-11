@@ -1,43 +1,40 @@
 require 'helpers/interior_decorator_helper'
-require 'interior_decorator/railtie'
 require 'interior_decorator/routes'
+
+ActiveSupport.on_load :action_controller do
+  include InteriorDecoratorHelper
+end
 
 class InteriorDecorator
 
-  attr_reader :model
+  attr_reader :record, :view
 
-  def self.decorate(item)
-    if item.respond_to?(:map)
-      item.map { |object| new(object) }
+  def self.decorate(record_or_collection, view)
+    if record_or_collection.respond_to?(:map)
+      record_or_collection.map { |record| new(record, view) }
     else
-      new(item)
+      new(record_or_collection, view)
     end
   end
 
-  def initialize(model)
-    @model = model
+  def initialize(record, view)
+    @record = record
+    @view = view
   end
-
-  def helper
-    ActionController::Base.helpers
-  end
-  alias_method :h, :helper
-
-  def route
-    @_route_helper ||= InteriorDecoratorRoutes.instance
-  end
-  alias_method :r, :route
+  alias_method :model, :record
 
   def method_missing(method_name, *args, &block)
-    if model.respond_to?(method_name)
-      model.public_send(method_name, *args, &block)
+    if record.respond_to?(method_name)
+      record.public_send(method_name, *args, &block)
+    elsif view.respond_to?(method_name)
+      view.public_send(method_name, *args, &block)
     else
       super
     end
   end
 
   def respond_to_missing?(method_name, include_private=false)
-    model.respond_to?(method_name, include_private)
+    [record, view].any? { |item| item.respond_to?(method_name, include_private) }
   end
 
 end

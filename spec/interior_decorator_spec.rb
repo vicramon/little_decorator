@@ -4,8 +4,8 @@ require 'fixtures/user_decorator'
 
 describe InteriorDecorator do
 
-  let(:item) { User.new }
-  subject { UserDecorator.new(item) }
+  let(:record) { User.new }
+  subject { UserDecorator.new(record, nil) }
 
   it 'returns a decorated version of an object' do
     expect(subject).to be_instance_of UserDecorator

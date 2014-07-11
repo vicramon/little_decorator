@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
   s.files = Dir.glob("lib/**/*") + %w(README.md)
   s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec-rails'
   s.add_runtime_dependency 'rails'
   s.require_path = 'lib'
 end

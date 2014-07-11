@@ -9,7 +9,7 @@ class UserDecorator < InteriorDecorator
   end
 
   def likes_to_bake
-    model.favorite_food
+    record.favorite_food
   end
 
 end

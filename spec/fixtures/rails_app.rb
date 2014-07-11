@@ -8,6 +8,7 @@ module Rails
   class App
 
     def env_config; {} end
+    def env_defaults; {} end
 
     def routes
       @routes ||= ActionDispatch::Routing::RouteSet.new.tap do |routes|

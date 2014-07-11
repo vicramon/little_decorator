@@ -44,7 +44,7 @@ You can access helper methods and route helpers in your decorators.
 
 ### Decorate Your Objects
 
-You can call `decorate` on an object or a collection in both controllers and views. Examples below.
+The api consists of one method: `decorate`. You can call `decorate` on an object or a collection in both controllers and views. Examples:
 
 #### In Controllers
 

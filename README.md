@@ -1,15 +1,15 @@
-# Interior Decorator
-
 [![Code Climate](https://codeclimate.com/github/vicramon/interior_decorator.png)](https://codeclimate.com/github/vicramon/interior_decorator)
 
-Ultra-lightweight decorator for Rails models. Only 42 actionable lines of code!
+![LittleDecorator: a rails model decorator. A cute husky with sunglasses proclaims his surprise at how small this gem is.](http://i.imgur.com/e0YvqjJ.png)
+
+Ultra lightweight decorator for Rails models. LittleDecorator has just 42 actionable lines of code.
 
 ## Installation
 
 Include it in your Gemfile.
 
 ```
-gem 'interior_decorator'
+gem 'little_decorator'
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ Add your decorator in `app/decorators`:
 
 ```ruby
 # app/decorators/user_decorator.rb
-class UserDecorator < InteriorDecorator
+class UserDecorator < LittleDecorator
 
   def full_name
     "#{first_name} #{last_name}"
@@ -35,23 +35,25 @@ end
 
 Method calls are sent to the model via `method_missing`, so you can call model methods directly as in the `full_name` method defined above.
 
-If there's going to be a method name collision then call model methods with `model.`.
+Call model methods with `model` when you want to override a method but still get to the original model.
 
-You can access helper methods with `helper.`, or `h.` for short.
+You can access helper methods and route helpers in your decorators.
 
 ### Decorate Your Objects
 
+You can call `decorate` on an object or a collection in both controllers and views. Examples below.
+
 #### In Controllers
 
-Call `decorate` on the decorator:
+Just call `decorate`:
 
 ```ruby
-decorated_user = UserDecorator.decorate(user)
+decorate(user)
 ```
 
 #### In Views
 
-Call the decorate helper, or `d` for short:
+Just call `decorate`:
 
 ```erb
 <%= decorate(user) %>
@@ -59,10 +61,10 @@ Call the decorate helper, or `d` for short:
 
 #### On Collections
 
-Call decorate the same way. You'll get an array of decorated objects.
+Just call `decorate`. You'll get an array of decorated objects
 
 ```ruby
-decorated_users = UserDecorator.decorate(users)
+decorate(users)
 ```
 
 ```erb
@@ -78,7 +80,7 @@ For use with Rails.vim. Place in `config/projections.json`.
   "app/decorators/*_decorator.rb": {
     "command": "decorator",
     "alternate": "spec/decorators/%s_decorator_spec.rb",
-    "template": "class %SDecorator < InteriorDecorator\nend"
+    "template": "class %SDecorator < LittleDecorator\nend"
   }
 }
 ```

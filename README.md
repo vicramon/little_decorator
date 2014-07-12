@@ -4,7 +4,7 @@
 
 ![LittleDecorator: a rails model decorator. A cute husky with sunglasses proclaims his surprise at how small this gem is.](http://i.imgur.com/e0YvqjJ.png)
 
-LittleDecorator is an ultra lightweight decorator for Rails models. There are only **42** lines of code in lib.
+LittleDecorator is an ultra-lightweight decorator for Rails models. There are only **42** lines of code in lib.
 
 ## Installation
 

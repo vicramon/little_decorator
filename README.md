@@ -29,7 +29,7 @@ class UserDecorator < LittleDecorator
   end
 
   def updated_at
-    model.updated_at.strftime("%A, %B %e, %Y")
+    record.updated_at.strftime("%A, %B %e, %Y")
   end
 
 end
@@ -37,13 +37,13 @@ end
 
 Method calls are sent to the model via `method_missing`, so you can call model methods directly as in the `full_name` method defined above.
 
-Call model methods with `model` when you want to override a method but still get to the original model.
+Call model methods with `record` when you want to override a method but still get to the original model.
 
 You can access helper methods and route helpers in your decorators.
 
 ### Decorate Your Objects
 
-The api consists of one method: `decorate`. You can call `decorate` on an object or a collection in both controllers and views. Examples:
+The API consists of a single method: `decorate`. This method will be available in your controllers and views. You can call `decorate` on an object or a collection. Examples:
 
 #### In Controllers
 

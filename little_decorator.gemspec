@@ -15,8 +15,5 @@ Gem::Specification.new do |s|
   s.files = Dir.glob("lib/**/*") + %w(README.md)
   s.require_path = 'lib'
 
-  s.add_development_dependency 'appraisal'
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'rspec-rails'
   s.add_runtime_dependency 'rails'
 end

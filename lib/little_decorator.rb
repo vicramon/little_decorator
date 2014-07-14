@@ -1,4 +1,5 @@
 require 'little_decorator/helper'
+
 ActiveSupport.on_load(:action_controller) { include LittleDecorator::Helper }
 
 class LittleDecorator

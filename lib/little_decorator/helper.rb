@@ -1,4 +1,5 @@
 require 'active_support/concern'
+
 class LittleDecorator
   module Helper
     extend ActiveSupport::Concern

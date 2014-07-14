@@ -8,9 +8,9 @@ require 'rspec/rails'
 describe UsersController, type: :controller do
 
   it "has access to the decorate helper" do
-    expect(UserDecorator).to receive(:decorate) do |record, view|
+    expect(UserDecorator).to receive(:new) do |record, view|
       expect(record).to be_an_instance_of User
-    end.and_return(instance_of UserDecorator)
+    end
     get :show
   end
 

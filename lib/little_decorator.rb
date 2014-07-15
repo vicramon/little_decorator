@@ -1,8 +1,10 @@
 require 'little_decorator/helper'
 
-ActiveSupport.on_load(:action_controller) { include LittleDecorator::Helper }
+ActiveSupport.on_load(:action_controller) { delegate :decorate, :d, to: :view_context }
+ActiveSupport.on_load(:action_view) { include LittleDecorator::Helper }
 
 class LittleDecorator
+
   attr_reader :record, :view
 
   def initialize(record, view)
@@ -20,4 +22,5 @@ class LittleDecorator
   def respond_to_missing?(method_name, include_private=false)
     [record, view].any? { |item| item.respond_to?(method_name, include_private) }
   end
+
 end

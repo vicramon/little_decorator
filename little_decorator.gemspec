@@ -4,7 +4,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
   s.name = "little_decorator"
-  s.version = '0.0.3'
+  s.version = '0.0.4'
   s.license = "MIT"
   s.authors = ["Vic Ramon"]
   s.email = ["vic@vicramon.com.com"]

@@ -1,3 +1,5 @@
 Gemfile.lock
 gemfiles/*.lock
 *.gem
+.ruby-version
+.ruby-gemset

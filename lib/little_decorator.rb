@@ -7,7 +7,7 @@ class LittleDecorator
 
   attr_reader :record, :view
 
-  def initialize(record, view)
+  def initialize(record, view=nil)
     @record, @view = record, view
   end
   alias_method :model, :record

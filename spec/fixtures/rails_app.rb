@@ -13,7 +13,10 @@ module Rails
     def routes
       @routes ||= ActionDispatch::Routing::RouteSet.new.tap do |routes|
         routes.draw do
-          resource :users
+          resource :users do
+            get :missing, on: :member
+            get :nils, on: :member
+          end
         end
       end
     end

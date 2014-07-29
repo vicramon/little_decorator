@@ -14,4 +14,14 @@ describe UsersController, type: :controller do
     get :show
   end
 
+  it "passes empty-collections through" do
+    expect(UserDecorator).not_to receive(:new)
+    get :missing
+  end
+
+  it "passes empty-collections through" do
+    expect(UserDecorator).not_to receive(:new)
+    get :nils
+  end
+
 end

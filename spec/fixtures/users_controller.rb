@@ -5,4 +5,14 @@ class UsersController < ApplicationConroller
     render nothing: true
   end
 
+  def missing
+    decorate([])
+    render nothing: true
+  end
+
+  def nils
+    decorate(nil)
+    render nothing: true
+  end
+
 end

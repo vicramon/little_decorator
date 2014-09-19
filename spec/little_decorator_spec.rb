@@ -31,4 +31,9 @@ describe LittleDecorator do
     expect(subject.respond_to?(:first_name)).to be true
   end
 
+  it 'delegates to_param to the model' do
+    expect(record).to receive(:to_param)
+    subject.to_param
+  end
+
 end

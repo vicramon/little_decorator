@@ -6,6 +6,7 @@ class LittleDecorator
         item_or_collection.map{ |item| decorate(item) }
       else
         item = item_or_collection
+        return item if LittleDecorator === item
         decorator = "#{item.class}Decorator".constantize
         decorator.new(item, self)
       end

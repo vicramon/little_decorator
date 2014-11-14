@@ -2,7 +2,7 @@
 [![Code Climate](http://img.shields.io/codeclimate/github/kabisaict/flow.svg)](https://codeclimate.com/github/vicramon/little_decorator)
 [![Travis CI](https://travis-ci.org/vicramon/little_decorator.svg?branch=master)](https://travis-ci.org/vicramon/little_decorator)
 
-![LittleDecorator: a rails model decorator. A cute husky with sunglasses proclaims his surprise at how small this gem is.](http://i.imgur.com/e0YvqjJ.png)
+# LittleDecorator: Rails Model Decorator
 
 LittleDecorator is an ultra-lightweight decorator for Rails models. There are only **42** lines of code in lib.
 
